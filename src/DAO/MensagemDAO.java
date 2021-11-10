@@ -18,39 +18,17 @@ public class MensagemDAO {
     public MensagemDAO() {
     }
 
-    File arquivo = new File("mensagens.txt");
-
-    public void escreverArquivo(List<String> mensagens){
-        int i ;
-        if (!arquivo.isFile()) {
-            try {
-                this.arquivo.createNewFile();
-            } catch (IOException var4) {
-                var4.printStackTrace();
-            }
-        }
-        try {
-            FileWriter writer = new FileWriter("mensagens.txt");
-            PrintWriter escreve = new PrintWriter(writer);
-            for(i = 0; i < mensagens.size();i++){
-                escreve.println(mensagens.get(i));
-            }
-            writer.close();
-        } catch (IOException var3) {
-            var3.printStackTrace();
-        }
+    List<Mensagem> lista = new ArrayList<>();
+    public List<Mensagem> listarMensagens(Cliente cliente) {
+        return lista;
     }
-    public List<Mensagem> lerArquivo() throws IOException {
-        List<Mensagem> listaDeMensagens = new ArrayList<>();
-        List<String> listaDoArquivo;
-        if (arquivo.isFile()){
-            Path path = Paths.get("mensagens.txt");
-            listaDoArquivo = Files.readAllLines(path);
-            for (int i = 0; i < listaDoArquivo.size(); i++) {
-                listaDeMensagens.add(new Mensagem(Long.parseLong(listaDoArquivo.get(i))));
-            }
+    public List<Mensagem> cadastrarMensagens(Long id, Cliente cliente, String pergunta) {
+        Mensagem nova = new Mensagem(id,cliente.getId(),pergunta);
+        lista.add(nova);
 
-        }
-        return listaDeMensagens;
+        return lista;
     }
+    File arquivo = new File("logs.txt");
+
+
 }

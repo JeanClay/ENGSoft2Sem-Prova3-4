@@ -3,6 +3,7 @@ package View;
 import Controller.MensagemController;
 import Model.Cliente;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MensagemView {
@@ -10,8 +11,8 @@ public class MensagemView {
 
     public void menu(Cliente cliente) {
         while (true) {
-            System.out.println("1 - Listar Perguntas");
-            System.out.println("2 - Cadastar Pergunta");
+            System.out.println("1 - Cadastrar Perguntas");
+            System.out.println("2 - Listar Pergunta");
             Scanner ler = new Scanner(System.in);
             int escolha = ler.nextInt();
             switch (escolha) {
@@ -34,7 +35,10 @@ public class MensagemView {
 
     private void cadastrarPergunta(Cliente cliente) {
         Scanner ler = new Scanner(System.in);
+        System.out.println("ID da pergunta");
+        Long id = ler.nextLong();
+        System.out.println("Pergunta");
         String pergunta = ler.nextLine();
-        controller.cadastrarMensagens(cliente,pergunta);
+        controller.cadastrarMensagens(id,cliente,pergunta);
     }
 }

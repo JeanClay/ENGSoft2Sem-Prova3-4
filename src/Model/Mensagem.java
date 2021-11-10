@@ -14,6 +14,12 @@ public class Mensagem {
         this.idCliente = idCliente;
     }
 
+    public Mensagem(Long id, Long idCliente, String mensagem) {
+        this.id = id;
+        this.idCliente = idCliente;
+        Mensagem = mensagem;
+    }
+
     public Long getId() {
         return id;
     }
@@ -40,6 +46,6 @@ public class Mensagem {
 
     @Override
     public String toString() {
-        return id + ';' + idCliente + ';' + Mensagem + '\'';
+        return id + ";" + idCliente + ";" + Mensagem + "\n";
     }
 }
