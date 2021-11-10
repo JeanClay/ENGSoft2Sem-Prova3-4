@@ -4,12 +4,6 @@ import Model.Cliente;
 import Model.Mensagem;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,11 +16,10 @@ public class MensagemDAO {
     public List<Mensagem> listarMensagens(Cliente cliente) {
         return lista;
     }
-    public List<Mensagem> cadastrarMensagens(Long id, Cliente cliente, String pergunta) {
-        Mensagem nova = new Mensagem(id,cliente.getId(),pergunta);
-        lista.add(nova);
+    public void cadastrarMensagens(Long id, Cliente cliente, String pergunta) {
 
-        return lista;
+        lista.add(new Mensagem(id,cliente.getId(),pergunta));
+
     }
     File arquivo = new File("logs.txt");
 

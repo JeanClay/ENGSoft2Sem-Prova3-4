@@ -22,7 +22,7 @@ public class MensagemView {
                 case 2:
                     listarPerguntas(cliente);
                     break;
-                default:
+                case 0:
                     return;
             }
         }
@@ -38,7 +38,8 @@ public class MensagemView {
         System.out.println("ID da pergunta");
         Long id = ler.nextLong();
         System.out.println("Pergunta");
-        String pergunta = ler.nextLine();
+        Scanner ler2 = new Scanner(System.in);
+        String pergunta = ler2.nextLine();
         controller.cadastrarMensagens(id,cliente,pergunta);
     }
 }
