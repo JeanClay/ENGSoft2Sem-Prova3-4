@@ -29,12 +29,12 @@ public class MensagemView {
     }
 
     public void listarPerguntas(Cliente cliente) {
-        System.out.println(controller.listarPerguntas(cliente));
+        System.out.println(controller.listarMensagens(cliente));
     }
 
     private void cadastrarPergunta(Cliente cliente) {
         Scanner ler = new Scanner(System.in);
         String pergunta = ler.nextLine();
-        controller.cadastrarPergunta(cliente,pergunta);
+        controller.cadastrarMensagens(cliente,pergunta);
     }
 }

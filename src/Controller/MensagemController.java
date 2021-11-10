@@ -8,9 +8,10 @@ public class MensagemController {
     public MensagemController() {
     }
 
-    public List<String> listarPerguntas(Cliente cliente) {
+    public List<String> listarMensagens(Cliente cliente) {
+        return null;
     }
 
-    public void cadastrarPergunta(Cliente cliente, String pergunta) {
+    public void cadastrarMensagens(Cliente cliente, String pergunta) {
     }
 }
